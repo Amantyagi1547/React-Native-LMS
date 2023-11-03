@@ -1,37 +1,15 @@
-// CourseListScreen.js
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import courseModel from './courseModel';
-import axios from 'axios';
 
 
 const CourseListScreen = ({ navigation }) => {
   const [courses, setCourses] = useState([]);
-  // console.log(courses)
-//   const[myUserData,SetMyUserDate]=useState();
-//   const getUserData=async()=>{
-//   axios.get(`https://almenolms-default-rtdb.firebaseio.com/course.json`) //integration of api
-  
-//   .then(response => {
-//     var a="-NiDVWJ8r30kl2cFtxT5"
-//      console.log(typeof(response.data));  
-//      SetMyUserDate(response.data)
-//      console.log("------------")
-//      console.log(response.data)
-//   })
-//   .catch(error => {
-//     console.error(error);
-//   }); 
-  
-  
-// }
+
   useEffect(() => {
-    // getUserData();
-    // You can fetch courses from an API or use a dummy data array
-    setCourses([courseModel, courseModel, courseModel]); // Sample data
+    setCourses([courseModel, courseModel, courseModel]); 
   }, []);
 
-  // console.log(myUserData)
 
   const navigateToCourseDetails = (course) => {
     navigation.navigate('CourseDetails', { course });
@@ -48,7 +26,6 @@ const CourseListScreen = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigateToCourseDetails(item)}>
             <Text>{item.name}</Text>
             <Text>{item.instructor}</Text>
-            {/* Display other basic course information */}
           </TouchableOpacity>
         )}
       />

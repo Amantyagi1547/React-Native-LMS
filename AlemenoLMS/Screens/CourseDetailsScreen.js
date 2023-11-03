@@ -1,4 +1,3 @@
-// CourseDetailsScreen.js
 import React from 'react';
 import { View, Text, Button, TouchableOpacity } from 'react-native';
 
@@ -6,10 +5,8 @@ const CourseDetailsScreen = ({ route,navigation }) => {
   const { course } = route.params;
 
   const enrollInCourse = () => {
-    alert("Enrollment Confirm")
+    alert("Enrollment Confirmed")
     navigation.navigate('StudentDashboardScreen',{course})
-    // Implement your enrollment logic here
-    // Display a confirmation message
   };
 
   return (
@@ -22,10 +19,6 @@ const CourseDetailsScreen = ({ route,navigation }) => {
       <Text>Schedule: {course.schedule}</Text>
       <Text>location: {course.location}</Text>
       <Text>prerequisites: {course.prerequisites}</Text>
-      {/* <Text>syllabus: {course.syllabus}</Text> */}
-
-      {/* Display other course details */}
-      {/* Add other course details like description, duration, schedule, location, prerequisites */}
       <Button
         title="Enroll"
         onPress={enrollInCourse}

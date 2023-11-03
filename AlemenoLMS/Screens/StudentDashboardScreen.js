@@ -1,6 +1,5 @@
-// StudentDashboardScreen.js
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, Image, ProgressViewIOS } from 'react-native';
+import { View, Text } from 'react-native';
 import courseModel from './courseModel';
 
 const StudentDashboardScreen = ({ route,navigation }) => {
@@ -8,8 +7,7 @@ const StudentDashboardScreen = ({ route,navigation }) => {
   const [enrolledCourses, setEnrolledCourses] = useState([]);
 console.log(course)
   useEffect(() => {
-    // Fetch the list of courses the student is enrolled in.
-    setEnrolledCourses([courseModel, courseModel]); // Sample data
+    setEnrolledCourses([courseModel, courseModel]);
   }, []);
 
   return (
